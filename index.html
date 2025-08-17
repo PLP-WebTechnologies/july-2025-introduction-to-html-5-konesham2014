@@ -1,84 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A beginner-friendly example of an accessible and SEO-optimized HTML5 web page layout.">
-  <title>Accessible & SEO-Friendly Web Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A single-file example of an accessible, semantic, and SEO-friendly HTML5 web page with clear structure and headings.">
+  <title>Accessible HTML5 Semantic Page – Example</title>
 </head>
 <body>
+  
+  <!-- Skip link helps keyboard and screen reader users reach the main content quickly -->
+  <a href="#main" aria-label="Skip to main content">Skip to main content</a>
 
-  <!-- Header with Site Title and Navigation -->
-  <header role="banner">
-    <h1>Accessible Web Design</h1>
+  <!-- Site Header and Navigation (landmark) -->
+  <header>
+    <h1>Accessible HTML5 Semantic Page</h1>
+
+    <!-- Primary navigation using meaningful link text -->
     <nav aria-label="Primary">
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#intro">Introduction</a></li>
         <li><a href="#articles">Articles</a></li>
+        <li><a href="#resources">Resources</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- Optional breadcrumb trail for orientation -->
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Semantic Example</li>
+      </ol>
+    </nav>
   </header>
 
-  <!-- Main Content Area -->
-  <main role="main" id="main-content">
+  <!-- Main content (landmark). tabindex enables quick focus after skip link. -->
+  <main id="main" tabindex="-1">
 
-    <!-- About Section -->
-    <section id="about">
-      <h2>About This Page</h2>
-      <p>This example shows how to structure a web page using semantic HTML5 elements. It ensures the content is <strong>accessible</strong> for screen readers and <strong>optimized</strong> for search engines by applying best practices.</p>
+    <!-- Introduction section with clear H2 -->
+    <section id="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Introduction</h2>
+      <p>This single HTML file demonstrates a clean <strong>semantic structure</strong> with proper headings, accessibility enhancements, and beginner-friendly SEO. The goal is human-readable content that is also easy for search engines to understand.</p>
+
       <figure>
-        <img src="example-image.jpg" alt="Illustration of web accessibility concept">
-        <figcaption>Visual representation of inclusive web design.</figcaption>
+        <img src="example-image.jpg" alt="People using laptops and screen readers to access a website">
+        <figcaption>Inclusive design: the same content, accessible to everyone.</figcaption>
       </figure>
+
+      <p>Use the navigation above to jump to the articles, quick resources, or contact information.</p>
     </section>
 
-    <!-- Articles Section -->
-    <section id="articles">
-      <h2>Latest Articles</h2>
+    <!-- Articles list: each article is self-contained and has its own header/footer -->
+    <section id="articles" aria-labelledby="articles-heading">
+      <h2 id="articles-heading">Articles</h2>
 
-      <article>
+      <article aria-labelledby="a1-title">
         <header>
-          <h3>Understanding Semantic HTML</h3>
+          <h3 id="a1-title">Why Semantic HTML Matters</h3>
+          <p><time datetime="2025-08-18">August 18, 2025</time></p>
         </header>
-        <p>Semantic HTML improves accessibility, SEO, and maintainability by using elements that describe their meaning. Examples include <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;section&gt;</code>.</p>
+        <p>Semantic elements like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> describe the purpose of content, improving screen reader navigation and helping search engines interpret the page hierarchy.</p>
         <footer>
-          <a href="#read-more-semantic" aria-label="Read more about Understanding Semantic HTML">Read more</a>
+          <p><a href="#intro" aria-label="Return to the Introduction section">Return to Introduction</a></p>
         </footer>
       </article>
 
-      <article>
+      <article aria-labelledby="a2-title">
         <header>
-          <h3>Top 5 Accessibility Tips</h3>
+          <h3 id="a2-title">Accessibility Essentials</h3>
+          <p><time datetime="2025-08-17">August 17, 2025</time></p>
         </header>
-        <p>Ensure your website works for everyone: use proper headings, provide alt text for images, ensure keyboard navigation, and maintain good color contrast.</p>
+        <p>Key practices include logical heading order (one <code>&lt;h1&gt;</code> followed by meaningful <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code>), text alternatives for images, descriptive link text, and a skip link to reach the main content.</p>
+        <ul>
+          <li>Provide <em>alt</em> text that conveys purpose.</li>
+          <li>Ensure all interactive elements are reachable by keyboard.</li>
+          <li>Label navigation regions (e.g., <em>aria-label</em> on <code>&lt;nav&gt;</code>).</li>
+        </ul>
         <footer>
-          <a href="#read-more-accessibility" aria-label="Read more about Top 5 Accessibility Tips">Read more</a>
+          <p><a href="#resources" aria-label="Jump to the Resources section">Explore Resources</a></p>
         </footer>
       </article>
+
     </section>
 
-    <!-- Complementary Content -->
-    <aside aria-label="Quick tips">
-      <h2>Quick Tips</h2>
-      <ul>
-        <li>Use descriptive titles</li>
-        <li>Include meta descriptions</li>
-        <li>Organize content with headings</li>
-        <li>Write alt text for images</li>
-      </ul>
+    <!-- Complementary content (landmark) -->
+    <aside id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Resources</h2>
+      <p>Quick links and in-page navigation to support learning and discovery.</p>
+      <nav aria-label="In-page navigation">
+        <ul>
+          <li><a href="#intro">Back to Introduction</a></li>
+          <li><a href="#articles">Go to Articles</a></li>
+          <li><a href="#contact">Go to Contact</a></li>
+        </ul>
+      </nav>
     </aside>
+
+    <!-- FAQ style details for extra clarity (good for users and crawlers) -->
+    <section id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <details>
+        <summary>What makes this page accessible?</summary>
+        <p>Semantic landmarks, a skip link, descriptive alt text, and a logical heading hierarchy that assists both assistive technologies and search engines.</p>
+      </details>
+      <details>
+        <summary>How is this page SEO-friendly?</summary>
+        <p>A clear title and meta description, descriptive headings, human-readable content, and internal links that reflect the page structure.</p>
+      </details>
+    </section>
 
   </main>
 
-  <!-- Footer-->
-  <footer role="contentinfo" id="contact">
+  <!-- Footer (landmark) with contact and ownership information -->
+  <footer id="contact">
     <h2>Contact</h2>
     <address>
-      <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
-      <p>Follow us on <a href="https://twitter.com/example">Twitter</a></p>
+      <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+      <p>Website: <a href="https://example.com">example.com</a></p>
     </address>
-    <p>&copy; 2025 Accessible Web Design. All rights reserved.</p>
+    <p>&copy; 2025 Semantic & Accessibility Example. All rights reserved.</p>
   </footer>
 
 </body>
