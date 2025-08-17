@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly example of an accessible and SEO-optimized HTML5 web page layout.">
+  <title>Accessible & SEO-Friendly Web Page</title>
+</head>
+<body>
+
+  <!-- Header with Site Title and Navigation -->
+  <header role="banner">
+    <h1>Accessible Web Design</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main role="main" id="main-content">
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About This Page</h2>
+      <p>This example shows how to structure a web page using semantic HTML5 elements. It ensures the content is <strong>accessible</strong> for screen readers and <strong>optimized</strong> for search engines by applying best practices.</p>
+      <figure>
+        <img src="example-image.jpg" alt="Illustration of web accessibility concept">
+        <figcaption>Visual representation of inclusive web design.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles">
+      <h2>Latest Articles</h2>
+
+      <article>
+        <header>
+          <h3>Understanding Semantic HTML</h3>
+        </header>
+        <p>Semantic HTML improves accessibility, SEO, and maintainability by using elements that describe their meaning. Examples include <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;section&gt;</code>.</p>
+        <footer>
+          <a href="#read-more-semantic" aria-label="Read more about Understanding Semantic HTML">Read more</a>
+        </footer>
+      </article>
+
+      <article>
+        <header>
+          <h3>Top 5 Accessibility Tips</h3>
+        </header>
+        <p>Ensure your website works for everyone: use proper headings, provide alt text for images, ensure keyboard navigation, and maintain good color contrast.</p>
+        <footer>
+          <a href="#read-more-accessibility" aria-label="Read more about Top 5 Accessibility Tips">Read more</a>
+        </footer>
+      </article>
+    </section>
+
+    <!-- Complementary Content -->
+    <aside aria-label="Quick tips">
+      <h2>Quick Tips</h2>
+      <ul>
+        <li>Use descriptive titles</li>
+        <li>Include meta descriptions</li>
+        <li>Organize content with headings</li>
+        <li>Write alt text for images</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- Footer-->
+  <footer role="contentinfo" id="contact">
+    <h2>Contact</h2>
+    <address>
+      <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+      <p>Follow us on <a href="https://twitter.com/example">Twitter</a></p>
+    </address>
+    <p>&copy; 2025 Accessible Web Design. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
